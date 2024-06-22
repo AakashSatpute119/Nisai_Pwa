@@ -12,10 +12,8 @@ module.exports = defineConfig({
     videosFolder: "cypress/videos",
     reporter: "mochawesome",
     reporterOptions: {
-      reportDir: "cypress/reports",
-      overwrite: false,
-      html: false,
-      json: true,
+      mochaFile: "cypress/results/results-[hash].xml",
+      toConsole: true,
     },
   },
 });
