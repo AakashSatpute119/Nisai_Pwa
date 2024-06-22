@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "cleanup": "rm -rf cypress/reports cypress/screenshots cypress/videos",
     "cypress:run": "cypress run --config-file cypress.config.js"
   },
   "keywords": [],

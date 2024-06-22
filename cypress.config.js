@@ -17,9 +17,7 @@ module.exports = defineConfig({
       html: true, // Generate HTML report
       json: true, // Generate JSON report (needed for merging and generating HTML)
       screenshots: true, // Capture screenshots
-      screenshotsFolder: "cypress/screenshots", // Directory to save screenshots
       video: true, // Record video
-      videosFolder: "cypress/videos", // Directory to save videos
     },
   },
 });
