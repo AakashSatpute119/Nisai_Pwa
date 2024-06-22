@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2024-06-22T05:52:06.888Z",
-    "end": "2024-06-22T05:52:08.291Z",
-    "duration": 1403,
+    "failures": 0,
+    "start": "2024-06-22T07:38:05.433Z",
+    "end": "2024-06-22T07:38:08.210Z",
+    "duration": 2777,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f920151c-bb52-4db7-9c6a-1cc52aad72a4",
+      "uuid": "c045761d-7fb1-4edc-9ed1-f1fbaa046959",
       "title": "",
       "fullFile": "cypress/e2e/1_loginTest/loginTest.cy.js",
       "file": "cypress/e2e/1_loginTest/loginTest.cy.js",
@@ -27,44 +27,40 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d331a382-b2ae-4600-9975-2c84fbf73dd3",
-          "title": "My First Test",
+          "uuid": "060f8d17-e146-4614-9f16-ab46db498c9b",
+          "title": "Login Nisai web page",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Visits the Kitchen Sink",
-              "fullTitle": "My First Test Visits the Kitchen Sink",
+              "title": "Visit Website",
+              "fullTitle": "Login Nisai web page Visit Website",
               "timedOut": null,
-              "duration": 1329,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 2725,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit(\"/\");\ncy.contains(\"type\").click();\ncy.url().should(\"include\", \"/commands/actions\");\ncy.get(\".action-email\").type(\"fake@email.com\").should(\"have.value\", \"fake@email.com\");",
-              "err": {
-                "message": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Failed to register a ServiceWorker for scope ('https://web-orchestrator.dev.nisai.samagra.io/') with script ('https://web-orchestrator.dev.nisai.samagra.io/sw.js'): A bad HTTP response code (404) was received when fetching the script.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
-                "estack": "TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Failed to register a ServiceWorker for scope ('https://web-orchestrator.dev.nisai.samagra.io/') with script ('https://web-orchestrator.dev.nisai.samagra.io/sw.js'): A bad HTTP response code (404) was received when fetching the script.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
-                "diff": null
-              },
-              "uuid": "a47f63e2-3b4a-48e4-af1a-1fb350bdcb50",
-              "parentUUID": "d331a382-b2ae-4600-9975-2c84fbf73dd3",
+              "code": "cy.visit(\"https://web-orchestrator.dev.nisai.samagra.io/\");\ncy.url().should(\"contain\", \"web-orchestrator\");\ncy.get(\".login_input__1LHuO\").type(8668727053);\ncy.get(\".login_sendOTPButton__7hR8v\").click();\nconst otp = \"0000\";\notp.split(\"\").forEach((digit, index) => {\n  cy.get(`[aria-label=\"Please enter OTP character ${index + 1}\"]`).type(digit);\n});\ncy.get(\".otp-verification_verifyOTPButton__zzJY4\").click();\ncy.get(\":nth-child(1) > .student-screen_aakalanButton__Pb0FZ\").click();",
+              "err": {},
+              "uuid": "5687976f-aa44-4973-9b35-f223d9358b92",
+              "parentUUID": "060f8d17-e146-4614-9f16-ab46db498c9b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "a47f63e2-3b4a-48e4-af1a-1fb350bdcb50"
+          "passes": [
+            "5687976f-aa44-4973-9b35-f223d9358b92"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1329,
+          "duration": 2725,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -88,7 +84,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": false,
+        "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -100,8 +96,12 @@
       "options": {
         "reportDir": "cypress/reports",
         "overwrite": false,
-        "html": false,
-        "json": true
+        "html": true,
+        "json": true,
+        "screenshots": true,
+        "screenshotsFolder": "cypress/screenshots",
+        "video": true,
+        "videosFolder": "cypress/videos"
       },
       "version": "6.2.0"
     }

@@ -10,10 +10,16 @@ module.exports = defineConfig({
     video: true,
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
-    reporter: "mocha-junit-reporter", // Use either mocha-junit-reporter or mochawesome
+    reporter: "mochawesome",
     reporterOptions: {
-      mochaFile: "cypress/results/results-[hash].xml",
-      toConsole: true,
+      reportDir: "cypress/reports", // Directory where reports will be saved
+      overwrite: false,
+      html: true, // Generate HTML report
+      json: true, // Generate JSON report (needed for merging and generating HTML)
+      screenshots: true, // Capture screenshots
+      screenshotsFolder: "cypress/screenshots", // Directory to save screenshots
+      video: true, // Record video
+      videosFolder: "cypress/videos", // Directory to save videos
     },
   },
 });
