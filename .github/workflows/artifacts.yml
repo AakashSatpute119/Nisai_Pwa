@@ -25,7 +25,8 @@ jobs:
         run: npx cypress install
 
       - name: Run Cypress tests and generate report
-        run: npm run cypress:run
+        run: npm run cleanup
+          npm run cypress:run
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
