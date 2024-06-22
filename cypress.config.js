@@ -10,7 +10,7 @@ module.exports = defineConfig({
     video: true,
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
-    reporter: "mocha-junit-reporter, mochawesome",
+    reporter: "mocha-junit-reporter", // Use either mocha-junit-reporter or mochawesome
     reporterOptions: {
       mochaFile: "cypress/results/results-[hash].xml",
       toConsole: true,
