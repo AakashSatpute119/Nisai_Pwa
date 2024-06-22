@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "pretest": "npm run cleanup",
     "cleanup": "rm -rf cypress/reports cypress/screenshots cypress/videos",
-    "cypress:run": "cypress run --config-file cypress.config.js"
+    "cypress:run": "npm run cleanup && cypress run --config-file cypress.config.js",
+    "posttest": "npm run upload:artifacts",
+    "upload:artifacts": "echo 'Uploading Cypress Artifacts' && mkdir -p artifacts && cp -R cypress/reports artifacts/reports && cp -R cypress/screenshots artifacts/screenshots && cp -R cypress/videos artifacts/videos"
   },
   "keywords": [],
   "author": "",
