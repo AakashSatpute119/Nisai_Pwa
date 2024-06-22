@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2024-06-22T07:45:07.586Z",
-    "end": "2024-06-22T07:45:42.683Z",
-    "duration": 35097,
+    "failures": 0,
+    "start": "2024-06-22T07:48:29.985Z",
+    "end": "2024-06-22T07:48:44.872Z",
+    "duration": 14887,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "dcdde5f6-4ed3-48d7-b99e-963d34fbe0a8",
+      "uuid": "2c2703b1-73bd-486b-a002-5ac8fed76055",
       "title": "",
       "fullFile": "cypress/e2e/1_loginTest/loginTest.cy.js",
       "file": "cypress/e2e/1_loginTest/loginTest.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0a728ecb-05f8-43e2-926c-16e3ca0c36f8",
+          "uuid": "a15d887e-1c92-4230-b7af-15a370c7ca17",
           "title": "Login Nisai web page",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Visit Website",
               "fullTitle": "Login Nisai web page Visit Website",
               "timedOut": null,
-              "duration": 35023,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 14842,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visit(\"https://web-orchestrator.dev.nisai.samagra.io/\");\ncy.url().should(\"contain\", \"web-orchestrator\");\ncy.get(\".login_input__1LHuO\").type(8668727053);\ncy.get(\".login_sendOTPButton__7hR8v\").click();\nconst otp = \"0000\";\notp.split(\"\").forEach((digit, index) => {\n  cy.get(`[aria-label=\"Please enter OTP character ${index + 1}\"]`).type(digit);\n});\ncy.get(\".otp-verification_verifyOTPButton__zzJY4\").click();\ncy.get(\":nth-child(1) > .student-screen_aakalanButton__Pb0FZ\").click();",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .student-screen_aakalanButton__Pb0FZ`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .student-screen_aakalanButton__Pb0FZ`, but never found it.\n    at Context.eval (webpack://nisai_pwa/./cypress/e2e/1_loginTest/loginTest.cy.js:14:7)",
-                "diff": null
-              },
-              "uuid": "0915616f-dad7-4675-ad57-60f6f3737afe",
-              "parentUUID": "0a728ecb-05f8-43e2-926c-16e3ca0c36f8",
+              "err": {},
+              "uuid": "225192ee-5b42-4e9b-8b03-f37cddb00d62",
+              "parentUUID": "a15d887e-1c92-4230-b7af-15a370c7ca17",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "0915616f-dad7-4675-ad57-60f6f3737afe"
+          "passes": [
+            "225192ee-5b42-4e9b-8b03-f37cddb00d62"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 35023,
+          "duration": 14842,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "pretest": "npm run cleanup",
-    "cleanup": "rm -rf cypress/reports cypress/screenshots cypress/videos",
-    "cypress:run": "npm run cleanup && cypress run --config-file cypress.config.js"
+    "cypress:run": "cypress run --config-file cypress.config.js"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +11,6 @@
   "description": "",
   "devDependencies": {
     "cypress": "^13.12.0",
-    "mocha-junit-reporter": "^2.2.1",
-    "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome": "^7.1.3"
   }
 }
