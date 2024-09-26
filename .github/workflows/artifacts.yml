@@ -1,4 +1,4 @@
-name: Cypress Tests and Report
+name: Cypress Tests and Report test
 
 on:
   push:
