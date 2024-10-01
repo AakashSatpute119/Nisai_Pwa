@@ -4,7 +4,7 @@ describe("Login Nisai web page", () => {
     cy.url().should("contain", "web-orchestrator");
     cy.get(".login_input__1LHuO").type(8668727053);
     cy.get(".login_sendOTPButton__7hR8v").click();
-    const otp = "0000";
+    const otp = "abcd";
     otp.split("").forEach((digit, index) => {
       cy.get(`[aria-label="Please enter OTP character ${index + 1}"]`).type(
         digit
