@@ -7,7 +7,7 @@ module.exports = defineConfig({
     },
     baseUrl: "https://web-orchestrator.dev.nisai.samagra.io/",
     chromeWebSecurity: false,
-    video: true,
+    video: true,e
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
     reporter: "mochawesome",
