@@ -1,47 +1,17 @@
-name: CI/cd update test code 1213
+name: Dispatch Cypress Run
 
-# on:
-#   push:
-#     branches:
-#       - "*"
-#   pull_request:
-#     branches:
-#       - "*"
+on:
+  push:
+    branches:
+      - main  
 
-# jobs:
-#   cypress-run:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: "14"
-
-#       - name: Install dependencies
-#         run: |
-#           npm install
-#           npx cypress install
-
-#       - name: Run Cypress tests
-#         run: npx cypress run
-
-#       - name: Upload Cypress test results
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: cypress-test-results
-#           path: cypress/reports
-
-#       - name: Upload Cypress screenshots
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: cypress-screenshots
-#           path: cypress/screenshots
-
-#       - name: Upload Cypress videos
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: cypress-videos
-#           path: cypress/videos
+jobs:
+  trigger-cypress-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Repository Dispatch Event
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GH_PAT }}" \
+               -H "Accept: application/vnd.github.v3+json" \
+               https://api.github.com/repos/<username>/<repoA>/dispatches \
+               -d '{"event_type":"run-cypress-tests"}'
