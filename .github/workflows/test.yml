@@ -13,5 +13,5 @@ jobs:
         run: |
           curl -X POST -H "Authorization: token ${{ secrets.GH_PAT }}" \
                -H "Accept: application/vnd.github.v3+json" \
-               https://api.github.com/repos/<username>/<repoA>/dispatches \
+               https://github.com/esmagico/epic-ui-automation/dispatches \
                -d '{"event_type":"run-cypress-tests"}'
