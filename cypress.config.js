@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // Implement node event listeners here if needed
     },
-    baseUrl: "https://web-orchestrator.dev.nisai.samagra.io/",
+    baseUrl: "https://web-orchestrator.dev.nisai.samagra.iocasdc/",
     chromeWebSecurity: false,
     video: true,
     screenshotsFolder: "cypress/screenshots",
